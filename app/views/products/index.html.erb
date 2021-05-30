@@ -15,5 +15,5 @@ div {
     <%= button_to "Add #{product.name} to cart", line_items_path(:product_id => product.id) %>
   </p>
 <% end%>
-
+<%=button_to "Add #{product.name} to cart", line_items_path(:product_id => product.id)%>
 <%= link_to "New product", new_product_path%>
