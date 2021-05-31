@@ -37,21 +37,21 @@ class LineItem < ApplicationRecord
   @line_item.destroy
   redirect_to cart_path(@current_cart)
 end
-def add_quantity
-  @line_item = LineItem.find(params[:id])
-  @line_item.quantity += 1
-  @line_item.save
-  redirect_to cart_path(@current_cart)
-end
-
-def reduce_quantity
-  @line_item = LineItem.find(params[:id])
-  if @line_item.quantity > 1
-    @line_item.quantity -= 1
-  end
-  @line_item.save
-  redirect_to cart_path(@current_cart)
-end
+# def add_quantity
+#   @line_item = LineItem.find(params[:id])
+#   @line_item.quantity += 1
+#   @line_item.save
+#   redirect_to cart_path(@current_cart)
+# end
+#
+# def reduce_quantity
+#   @line_item = LineItem.find(params[:id])
+#   if @line_item.quantity > 1
+#     @line_item.quantity -= 1
+#   end
+#   @line_item.save
+#   redirect_to cart_path(@current_cart)
+# end
 def create
   @order = Order.new(order_params)
   @current_cart.line_items.each do |item|
